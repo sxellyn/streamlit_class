@@ -1,3 +1,5 @@
+#pip install esses pacotes abaixo no terminal:
+
 import yfinance as yf
 import plotly.graph_objects as go
 import streamlit as st
@@ -30,3 +32,9 @@ st.plotly_chart(fig)
 
 #derrubar aplicação =  ctrl Z
 
+# git status - pra checar como ta o arquivo
+# git add nome do arquivo pra salvar
+# git commit -m "comentario"
+# git push origin main
+
+#fazendo branch:  git checkout -b build/create_requirements "nome"
