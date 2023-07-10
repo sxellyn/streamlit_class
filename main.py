@@ -14,10 +14,8 @@ import streamlit as st
 st.title("APPZINHO")
 
 #barra lateral com opções:
-st.sidebar.title("IRF 01")
+st.sidebar.title("IRF")
 ticker_symbol1 = st.sidebar.text_input("Nome", "AAPL", max_chars = 10)
-
-st.sidebar.title("IRF 02")
 ticker_symbol2 = st.sidebar.text_input("Nome", "AAPL", max_chars = 10)
 
 #BAIXAR os dados:
