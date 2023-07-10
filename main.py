@@ -14,20 +14,29 @@ import streamlit as st
 st.title("APPZINHO")
 
 #barra lateral com opções:
-st.sidebar.title("titulo da barrinha")
-ticker_symbol = st.sidebar.text_input("Texto", "AAPL", max_chars = 10)
+st.sidebar.title("IRF 01")
+ticker_symbol1 = st.sidebar.text_input("Nome", "AAPL", max_chars = 10)
+
+st.sidebar.title("IRF 02")
+ticker_symbol2 = st.sidebar.text_input("Nome", "AAPL", max_chars = 10)
 
 #BAIXAR os dados:
-data = yf.download(ticker_symbol, start = "2023-01-01", end = "2023-06-26")
+data = yf.download(['AAPL', 'MSFT'], start='2021-01-01', end='2021-12-31')
 
 #exibir os dados (aka dataframe):
 st.subheader("Historico")
 st.dataframe(data)
 
-#exibir graficos:
+#exibir grafico 1:
 fig = go.Figure()
 fig.add_trace(go.Scatter(x = data.index, y = data["Close"], name = "Fechamento"))
-fig.update_layout(title = f"{ticker_symbol}", xaxis_title = "DATA", yaxis_title = "PREÇO")
+fig.update_layout(title = f"{ticker_symbol1}", xaxis_title = "DATA", yaxis_title = "PREÇO")
+st.plotly_chart(fig)
+
+#exibir grafico 2:
+fig = go.Figure()
+fig.add_trace(go.Scatter(x = data.index, y = data["Close"], name = "Fechamento"))
+fig.update_layout(title = f"{ticker_symbol2}", xaxis_title = "DATA", yaxis_title = "PREÇO")
 st.plotly_chart(fig)
 
 #derrubar aplicação =  ctrl Z
