@@ -15,8 +15,8 @@ st.title("APPZINHO")
 
 #barra lateral com opções:
 st.sidebar.title("IRF")
-ticker_symbol1 = st.sidebar.text_input("Nome", "AAPL", max_chars = 10)
-ticker_symbol2 = st.sidebar.text_input("Nome", "AAPL", max_chars = 10)
+ticker_symbol1 = st.sidebar.text_input("Nome 1", "AAPL", max_chars=10)
+ticker_symbol2 = st.sidebar.text_input("Nome 2", "AAPL", max_chars=10)
 
 #BAIXAR os dados:
 data = yf.download(['AAPL', 'MSFT'], start='2021-01-01', end='2021-12-31')
